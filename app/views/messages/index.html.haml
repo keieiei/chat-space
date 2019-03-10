@@ -5,9 +5,9 @@
   = render :partial => "menu"
   .main_info
     .main_info_group_info
-      .group_info_group
-        %h2.group_info__group_name group1
-        %ul.group_info__group_member_name_list
+      .main_info_group_info_group
+        %h2.main_info_group_info_group_group_name group1
+        %ul.main_info_group_info_group_member_name_list
           %li.member_name member : kei
       .main_info_link_edit
         =link_to "Edit", :action => 'index', :anchor => 'answer'
@@ -26,10 +26,13 @@
         %p さよなら
     .enter_messages
       %form.enter_messages_new_message{:action => "index", :method => "answer"}
-        .enter_messages__new_message_input_form
-          %input.input_form_input-box_text{:placeholder => "type a message" , :type => "text"}
-          %label.input_form_input-box_image{:for => "message_image"}
-            %i.fa.fa-image
+        .enter_messages_new_message_input_form
+          %input.enter_messages_new_message_input_form_input-box_text{:placeholder => "type a message" , :type => "text"}
+          / %label.enter_messages_new_message_input_form_input-box_image{:for => "message_image"}
+          /   %i.fa.fa-image
+          / %input.input-box_image_file{:type => "file", :name => "message[image]", :id => "message_image"}
+          %label.enter_messages_new_message_input_form_input-box_image{:for => "message_image"}
+            = fa_icon "image"
             %input.input-box_image_file{:type => "file", :name => "message[image]", :id => "message_image"}
-        %input.enter_messages__new_message_submit-btn{:type => "submit", :name => "commit", :value => "Send"}
+        %input.enter_messages_new_message_submit-btn{:type => "submit", :name => "commit", :value => "Send"}
 

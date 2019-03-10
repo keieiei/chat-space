@@ -2,12 +2,12 @@
   .menu_user_info
     .menu_user_info_user
       %p kei
-      %ul.user__box_menu
-        %li.user___box_menu_edit-group
-          %i.fa.fa-edit
-        %li.user___box_menu_edit-user
-          %i.fa.fa-cog
+      %ul.menu_user_info_user_box_menu
+        %li.menu_user_info_user_box_menu_edit-group
+          =fa_icon "pencil-square-o"
+        %li.menu_user_info_user_box_menu_edit-user
+          =fa_icon "cog"
   .menu_groups_info
-    .menu__groups_info_group_info
-      %p.menu_groups_info___name    group1
-      %p.menu_groups_info___message messages
+    .menu_groups_info_group_info
+      %p.menu_groups_info_name    group1
+      %p.menu_groups_info_message messages
