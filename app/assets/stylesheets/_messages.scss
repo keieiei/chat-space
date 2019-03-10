@@ -1,0 +1,215 @@
+.body{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: white;
+    display: block;
+}
+
+*{
+      box-sizing: border-box;
+}
+
+ul li{
+      list-style: none;
+}
+
+a{
+  text-decoration: none;
+}
+
+.fa-photo:before, .fa-image:before, .fa-picture-o:before {
+    content: '\f03e';
+}
+
+.fa-gear:before, .fa-cog:before {
+    content: "\f013";
+}
+
+.fa-edit:before, .fa-pencil-square-o:before {
+    content: "\f044";
+}
+
+.flash_box{
+    color: white;
+    font-size: 1rem;
+    font-weight: lighter;
+    text-align: center;
+    width: 100vw;
+  .notice{
+  background-color: #38aef0;
+  }
+}
+
+.main_info{
+    width: calc(100vw - 300px);
+    float: left;
+  &_group_info{
+      height: 100px;
+      padding: 0 40px;
+      display: flex;
+      justify-content: space-between;
+      border-bottom: solid 1px #eee;
+      overflow: scroll;
+      &_group{
+        margin-top: 35px;
+        &_group_name{
+          font-size: 20px;
+          color: #333;
+          margin-bottom: 15px;
+        }
+        &_member_name_list{
+          display: flex;
+          font-size: 12px;
+          color: #999999;
+        }
+      }
+  }
+  &_link_edit{
+    height: 40px;
+    line-height: 40px;
+    padding: 0 20px;
+    margin-top: 30px;
+    border: solid 1px #38aef0;
+    position: absolute;
+    right: 40px;
+    a{
+      color: #38aef0;
+    }
+  }
+}
+
+  .main{
+    height: calc(100vh - 190px);
+    padding: 46px 40px;
+    background-color: #fafafa;
+    overflow: scroll;
+      &_user{
+        font-size: 16px;
+        font-weight:bold;
+        color: #434A54;
+        padding-bottom: 10px;
+        display: inline-block;
+      }
+      &_time_stamp{
+        font-size: 12px;
+        color: #999999;
+        padding-left: 10px;
+        display: inline-block;
+      }
+      &_message{
+        font-size: 16px;
+        color: #434A54;
+        padding-bottom: 40px;
+      }
+  }
+
+  .enter_messages{
+    height: 90px;
+    padding: 20px 40px;
+    background-color: #ddd;
+    &_new_message{
+      display: flex;
+      &_input_form{
+        position: relative;
+        width: 100%;
+        &_input-box_text{
+          height:50px;
+          width: 100%;
+          padding: 0 40px 0 10px;
+          color: #434a54;
+          border-style: none;
+        }
+
+        &_input-box_image{
+          font-size: 1.3rem;
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          cursor: pointer;
+          width: 17px;
+          .fa{
+            color: black;
+            display: inline-block;
+            font: normal normal normal 14px/1 FontAwesome;
+            font-size: inherit;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            width: 16px;
+          }
+          .input-box_image_file{
+            display: none;
+          }
+        }
+
+      }
+     &_submit-btn{
+        width: 100px;
+        height: 50px;
+        padding: 0 30px;
+        margin-left: 15px;
+        background-color: #38aef0;
+        color: white;
+        cursor: pointer;
+     }
+
+
+    }
+  }
+
+.menu{
+  background-color: #2f3e51;
+  height: 100%;
+  width: 300px;
+  position: relative;
+  float: left;
+  color: #ffffff;
+  font-weight: bold;
+  clear:both;
+
+    &_user_info{
+        background-color: #253141;
+        height: 100px;
+        display: flex;
+        align-items: center;
+        padding: 0 20px;
+        &_user{
+         display: flex;
+        justify-content: space-between;
+        width: 100%;
+        font-weight: bold;
+        &_box_menu{
+          display: flex;
+        &_edit-group, &_edit-user{
+          margin-left: 0.3rem;
+        }
+        }
+        .fa{
+          display: inline-block;
+          font: normal normal normal 14px/1 FontAwesome;
+          font-size: inherit;
+          text-rendering: auto;
+          -webkit-font-smoothing: antialiased;
+        }
+      }
+    }
+    &_groups_info{
+      height: calc(100vh - 100px);
+      background-color: #2f3e51;
+      padding: 20px 20px 0;
+      overflow: scroll;
+      &_group_info{
+        margin-bottom: 40px;
+      }
+      &_name{
+      font-size: 15px;
+      margin-bottom: 5px;
+      }
+      &_message{
+        font-size: 11px;
+      }
+    }
+}
+
+
