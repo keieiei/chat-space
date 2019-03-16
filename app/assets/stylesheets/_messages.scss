@@ -19,6 +19,11 @@ a{
   color: white;
 }
 
+p{
+  margin:0;
+  padding: 0;
+}
+
 .fa-photo:before, .fa-image:before, .fa-picture-o:before {
     content: '\f03e';
 }
