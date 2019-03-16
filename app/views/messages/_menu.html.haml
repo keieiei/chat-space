@@ -12,10 +12,6 @@
           = link_to edit_user_path(current_user) do
             = fa_icon 'cog', class: 'fa'
   .menu_groups_info
-    - current_user.groups.each do |group|
-      .menu_groups_info_group_info
-        = link_to group_messages_path(group) do
-          .menu_groups_info_name
-            = group.name
-          .menu_groups_info_message
-            = group.name
+    .menu_groups_info_group_info
+      %p.menu_groups_info_name    group1
+      %p.menu_groups_info_message messages
