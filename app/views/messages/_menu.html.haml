@@ -1,7 +1,8 @@
 .menu
   .menu_user_info
     .menu_user_info_user
-      %p kei
+      %p.name
+        =current_user.name
       %ul.menu_user_info_user_box_menu
         / = link_to "サインアウト", destroy_user_session_path, method: :delete
         %li.menu_user_info_user_box_menu_edit-group
