@@ -16,6 +16,7 @@ ul li{
 
 a{
   text-decoration: none;
+  color: white;
 }
 
 .fa-photo:before, .fa-image:before, .fa-picture-o:before {
@@ -192,6 +193,7 @@ a{
           text-rendering: auto;
           -webkit-font-smoothing: antialiased;
         }
+
       }
     }
     &_groups_info{
