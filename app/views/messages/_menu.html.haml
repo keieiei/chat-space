@@ -3,10 +3,13 @@
     .menu_user_info_user
       %p kei
       %ul.menu_user_info_user_box_menu
+        / = link_to "サインアウト", destroy_user_session_path, method: :delete
         %li.menu_user_info_user_box_menu_edit-group
-          =fa_icon "pencil-square-o"
+          = link_to edit_user_path(current_user) do
+            = fa_icon 'pencil-square-o', class: 'fa'
         %li.menu_user_info_user_box_menu_edit-user
-          =fa_icon "cog"
+          = link_to edit_user_path(current_user) do
+            = fa_icon 'cog', class: 'fa'
   .menu_groups_info
     .menu_groups_info_group_info
       %p.menu_groups_info_name    group1
