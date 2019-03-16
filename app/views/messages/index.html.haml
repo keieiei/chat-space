@@ -1,14 +1,18 @@
 %body
 .flash_box
-  .notice グループを作成しました
+  .notice
 .body
   = render :partial => "menu"
   .main_info
     .main_info_group_info
       .main_info_group_info_group
-        %h2.main_info_group_info_group_group_name group1
+        %h2.main_info_group_info_group_group_name
+          = @group_info.name
         %ul.main_info_group_info_group_member_name_list
-          %li.member_name member : kei
+          %li.member_name
+            member:
+            - @group_info.group_users.each do |group_user|
+              = group_user.user.name
       .main_info_link_edit
         =link_to "Edit", :action => 'index', :anchor => 'answer'
     .main
