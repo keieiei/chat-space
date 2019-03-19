@@ -83,18 +83,25 @@ p{
       color: #38aef0;
     }
   }
-}
+
 
   .main{
     height: calc(100vh - 190px);
     padding: 46px 40px;
     background-color: #fafafa;
     overflow: scroll;
+      &_info{
+        display: inline-block;
+        padding-bottom: 40px;
+
+      &_message{
+        display: inline-block;
+        padding-bottom: 10px;
+
       &_user{
         font-size: 16px;
         font-weight:bold;
         color: #434A54;
-        padding-bottom: 10px;
         display: inline-block;
       }
       &_time_stamp{
@@ -103,37 +110,52 @@ p{
         padding-left: 10px;
         display: inline-block;
       }
-      &_message{
+      &_img{
         font-size: 16px;
         color: #434A54;
-        padding-bottom: 40px;
+}
       }
   }
-
+}
   .enter_messages{
     height: 90px;
     padding: 20px 40px;
     background-color: #ddd;
-    &_new_message{
+    width: 100%;
+   display:flex;
+   position: relative;
+
+    .new_message{
+      height: 55px;
+      width: 100%;
       display: flex;
-      &_input_form{
-        position: relative;
-        width: 100%;
+
+    }
+    //   &_input_form{
+    //     height: 50px;
+    //     position: relative;
+    //     width: 100%;
+        .field_with_errors{
+height: 50px;
+width: 100%;
+          float:right;
+        }
+
         &_input-box_text{
           height:50px;
           width: 100%;
           padding: 0 40px 0 10px;
           color: #434a54;
           border-style: none;
+          clear: both;
         }
-
         &_input-box_image{
-          font-size: 1.3rem;
-          position: absolute;
-          top: 10px;
-          right: 10px;
+          height:50px;
+          font-size: 1.5rem;
           cursor: pointer;
-          width: 17px;
+          width: 20px;
+          position: relative;
+              right: 20px;
           .fa{
             color: black;
             display: inline-block;
@@ -143,27 +165,28 @@ p{
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
             width: 16px;
+
           }
           .input-box_image_file{
             display: none;
           }
         }
 
-      }
-     &_submit-btn{
-        width: 100px;
-        height: 50px;
-        padding: 0 30px;
-        margin-left: 15px;
-        background-color: #38aef0;
-        color: white;
-        cursor: pointer;
-     }
+       &_submit-btn{
+          width: 100px;
+          height: 50px;
+          padding: 0 30px;
+          margin-left: 15px;
+          background-color: #ad8383;
+          color: white;
+          cursor: pointer;
 
 
-    }
+        }
+    // }
   }
 
+}
 .menu{
   background-color: #2f3e51;
   height: 100%;
