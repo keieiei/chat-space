@@ -1,0 +1,18 @@
+.main
+  .main_user
+    = message.user.name
+  .main_time_stamp
+    = message.created_at.strftime("%Y/%m/%d %H:%M")
+  - if message.content.present?
+    .main_message
+      = message.content
+  = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
+
+.enter_messages
+  = form_for,:class=>"new_message" [@group, @message] do |f|
+    = f.text_field :content, class: 'enter_messages_input-box_text', placeholder: 'type a message'
+    .form__mask
+      = f.label :image, class: 'enter_messages_input-box_image' do
+        = fa_icon 'picture-o', class: 'icon'
+        = f.file_field :image, class: 'input-box_image_file'
+    = f.submit 'Send', class: 'enter_messages_submit-btn'

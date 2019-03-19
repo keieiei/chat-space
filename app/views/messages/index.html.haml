@@ -1,42 +1,37 @@
 %body
-.flash_box
-  .notice
-.body
-  = render :partial => "menu"
-  .main_info
-    .main_info_group_info
-      .main_info_group_info_group
-        %h2.main_info_group_info_group_group_name
-          = @group_info.name
-        %ul.main_info_group_info_group_member_name_list
-          %li.member_name
-            member:
-            - @group_info.group_users.each do |group_user|
-              = group_user.user.name
-      .main_info_link_edit
-        =link_to "Edit", :action => 'index', :anchor => 'answer'
-    .main
-      .main_user
-        %p kei
-      .main_time_stamp
-        %p 2019/04/01
-      .main_message
-        %p こんにちは
-      .main_user
-        %p name
-      .main_time_stamp
-        %p 2019/04/01
-      .main_message
-        %p さよなら
-    .enter_messages
-      %form.enter_messages_new_message{:action => "index", :method => "answer"}
-        .enter_messages_new_message_input_form
-          %input.enter_messages_new_message_input_form_input-box_text{:placeholder => "type a message" , :type => "text"}
-          / %label.enter_messages_new_message_input_form_input-box_image{:for => "message_image"}
-          /   %i.fa.fa-image
-          / %input.input-box_image_file{:type => "file", :name => "message[image]", :id => "message_image"}
-          %label.enter_messages_new_message_input_form_input-box_image{:for => "message_image"}
-            = fa_icon "image"
-            %input.input-box_image_file{:type => "file", :name => "message[image]", :id => "message_image"}
-        %input.enter_messages_new_message_submit-btn{:type => "submit", :name => "commit", :value => "Send"}
+  .body
+    = render :partial => "menu"
+    .main_info
+      .main_info_group_info
+        .main_info_group_info_group
+          %h2.main_info_group_info_group_group_name
+            = @group.name
+          %ul.main_info_group_info_group_member_name_list
+            %li.member_name
+              member:
+              - @group.group_users.each do |group_user|
+                = group_user.user.name
+                ,
+        .main_info_link_edit
+          =link_to "Edit", :controller => 'groups' ,:action => 'index', :anchor => 'answer'
+          / =link_to "Edit", :controller => 'groups' ,:action => 'edit_group_path', :method => 'edit'
+      .main
+        -@messages.each do|message|
+          .main_info
+            .main_info_message
+              %p.main_info_message_user
+                = message.user.name
+              %p.main_info_message_time_stamp
+                = message.created_at.strftime("%Y/%m/%d %H:%M")
+            - if message.content.present?
+              %p.main_info_message_img= message.content
+              = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
 
+      .enter_messages
+        = form_for [@group, @message] do |f|
+          = f.text_field :content, class: 'enter_messages_input-box_text', placeholder: 'type a message'
+          .form__mask
+            = f.label :image, class: 'enter_messages_input-box_image' do
+              = fa_icon 'picture-o', class: 'icon'
+              = f.file_field :image, class: 'input-box_image_file'
+          = f.submit 'Send', class: 'enter_messages_submit-btn'
