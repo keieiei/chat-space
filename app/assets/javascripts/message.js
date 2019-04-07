@@ -1,5 +1,5 @@
 $(function(){
-  function build_MessageIndexHTML(message){
+  function buildMessageHTML(message){
     if (message.image_url == null){
     var html = `<div class='main_info'>
                    <div class='main_info_message'>
@@ -41,7 +41,7 @@ $(function(){
       contentType: false
     })
     .done(function(message){
-      var html = build_MessageIndexHTML(message);
+      var html = buildMessageHTML(message);
       $('.main').append(html)
       $('.enter_messages_input-box_text').val('')
       $('.input-box_image_file').val('')
