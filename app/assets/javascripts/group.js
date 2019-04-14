@@ -10,9 +10,9 @@ function appendUserHTML(user) {
                 </div> `
     search_list.append(html);
  }
- function appendErrUserHTML(msg) {
+ function appendErrUserHTML() {
     var html = `<li>
-                  <div class='listview__element--right-icon'>${ msg }</div>
+                  <div class='listview__element--right-icon'>一致するユーザーはありません</div>
                 </li>`
     search_list.append(html);
   }
@@ -44,7 +44,7 @@ function appendUserHTML(user) {
         });
       }
       else {
-        appendErrUserHTML("一致するユーザーはありません");
+        appendErrUserHTML();
       }
     })
     .fail(function() {
