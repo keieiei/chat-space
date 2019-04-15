@@ -1,0 +1,10 @@
+.chat-group-form .chat-group-form__field:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}

@@ -10,28 +10,23 @@
       = f.label :name, class: 'chat-group-form__label'
     .chat-group-form__field--right
       = f.text_field :name, class: 'chat__group_name chat-group-form__input', placeholder: 'グループ名を入力してください'
-  / .chat-group-form__field.clearfix
-  /   .chat-group-form__field--left
-  /     %label.chat-group-form__label{:for => "chat_group_チャットメンバー"} チャットメンバー
-  /   .chat-group-form__field--right
-  /     = f.collection_check_boxes :user_ids, User.all, :id, :name
   .chat-group-form__field.clearfix
     .chat-group-form__field--left
-      %label.chat-group-form__label{:for => "user-search-field"}
+      %label.chat-group-form__label{for: "user-search-field"}
         チャットメンバーを追加
     .chat-group-form__field--right
       .chat-group-form__search.clearfix
-        %input#user-search-field.chat-group-form__input{:name => "search", :placeholder => "追加したいユーザー名を入力してください", :type => "text", :value => ""}/
+        %input#user-search-field.chat-group-form__input{name: "keyword", placeholder: "追加したいユーザー名を入力してください", type:"text", value:""}/
       #user-search-result
 
   .chat-group-form__field.clearfix
     .chat-group-form__field--left
-      %label.chat-group-form__label{:for => "members"} チャットメンバー
+      %label.chat-group-form__label{for:"members"} チャットメンバー
     .chat-group-form__field--right
       .chat-group-users.js-add-user
-        #313.chat-group-user.clearfix.js-chat-member
-          %input#group_user_ids{:name => "group[user_ids][]", :type => "hidden", :value => "313"}/
-          %p.chat-group-user__name keeiei
+        #chat-group-user-8.chat-group-user.clearfix.js-chat-member
+          %input{name: "group[user_ids][]", type: "hidden", value: "#{current_user.id}" }
+          %p.chat-group-user__name #{current_user.name}
 
   .chat-group-form__field.clearfix
     .chat-group-form__field--left
