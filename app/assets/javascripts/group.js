@@ -46,6 +46,9 @@ function appendUserHTML(user) {
       else {
         appendErrUserHTML();
       }
+      if(input === ""){
+        $("#user-search-result").empty();
+      }
     })
     .fail(function() {
       alert('ユーザー検索に失敗しました');
