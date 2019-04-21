@@ -1,32 +1,21 @@
 $(function(){
   function buildMessageHTML(message){
-    if (message.image_url == null){
-    var html = `<div class='main_info' data-message-id=${message.id}>
-                  <div class='main_info_message'>
-                    <p class='main_info_message_user'>
-                    ${message.user_name}
-                    </p>
-                    <p class='main_info_message_time_stamp'>
-                    ${message.created_at}
-                    </p>
-                    <p class='main_info_message_img'>${message.content}</p>
-                  </div>
-                </div>`
-    }else{
-    var html = `<div class='main_info' data-message-id=${message.id}>
-                  <div class='main_info_message'>
-                    <p class='main_info_message_user'>
-                    ${message.user_name}
-                    </p>
-                    <p class='main_info_message_time_stamp'>
-                    ${message.created_at}
-                    </p>
-                    <p class='main_info_message_img'>${message.content}</p>
-                  <img src="${message.image_url}" class="lower-message__image">
-                  </div>
-                </div>`
-    }
-    return html;
+    var image = (message.image_url) ? '<img src="'+message.image_url+'" class="lower-message__image">':"";
+    var html = '<div class= "main_info"  data-message-id = '+message.id+'>'+
+                  '<div class= "main_info_message">'+
+                   '<p class= "main_info_message_user" >'+
+                      message.user_name +
+                    '</p>'+
+                    '<p class= "main_info_message_time_stamp">'+
+                      message.created_at +
+                    '</p>'+
+                    '<p class= "main_info_message_img">'+
+                      message.content +
+                    '</p>'
+                      +image+
+                  '</div>'
+                '</div>';
+    return html
   }
   $('#new_message').on('submit', function(e){
     e.preventDefault();
