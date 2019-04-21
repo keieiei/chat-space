@@ -15,9 +15,9 @@
         .main_info_link_edit
           =link_to "Edit", :controller => 'groups' ,:action => 'index', :anchor => 'answer'
           / =link_to "Edit", :controller => 'groups' ,:action => 'edit_group_path', :method => 'edit'
-      .main
+      .main{'data-group-id': @group.id}
         -@messages.each do|message|
-          .main_info
+          .main_info{ 'data-message-id': message.id}
             .main_info_message
               %p.main_info_message_user
                 = message.user.name
