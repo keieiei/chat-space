@@ -30,21 +30,4 @@ class MessagesController < ApplicationController
     @group = Group.find(params[:group_id])
   end
 end
-# protect_from_forgery :except => [:create]
-
-#   def index
-#     @group_info = Group.find(params[:group_id])
-#   end
-
-#   def create
-#     @message = Message.new(message_params)
-#     redirect_to root_path if @message.save
-#   end
-
-
-#   private
-
-#   def message_params
-#     params.require(:message).permit(:content, :image, :group_id).merge(user_id: current_user.id)
-#   end
 
