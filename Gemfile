@@ -72,3 +72,7 @@ group :test do
   gem 'factory_bot_rails'
   gem 'rails-controller-testing'
 end
+
+group :production do
+  gem 'unicorn', '5.4.1'
+end
