@@ -11,9 +11,11 @@ function appendUserHTML(user) {
     search_list.append(html);
  }
  function appendErrUserHTML() {
-    var html = `<li>
-                  <div class='listview__element--right-icon'>一致するユーザーはありません</div>
-                </li>`
+    var html = `<ul>
+                  <li>
+                    <div class='listview__element--right-icon'>一致するユーザーはありません</div>
+                  </li>
+                </ul>`
     search_list.append(html);
   }
 
