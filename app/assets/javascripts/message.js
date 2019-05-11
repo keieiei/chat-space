@@ -60,8 +60,9 @@ $(function(){
       $('.main').animate({scrollTop: $('.main')[0].scrollHeight}, 'fast');
     })
     .fail(function() {
-      alert('自動更新できません');
+      clearInterval(timer);
     });
   };
-  setInterval(reloadMessages, 5000);
+  var timer;
+  timer = setInterval(reloadMessages, 5000);
 });
