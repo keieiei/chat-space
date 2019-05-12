@@ -68,7 +68,7 @@ gem 'devise'
 
 gem 'carrierwave'
 gem 'mini_magick'
-
+gem 'fog-aws'
 gem "actionview", ">= 5.0.7.2"
 
 group :test do
