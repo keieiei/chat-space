@@ -1,4 +1,4 @@
-$(function(){
+$(function(e){
   function buildMessageHTML(message){
     var image = (message.image_url) ? '<img src="'+message.image_url+'" class="lower-message__image">':"";
     var html = '<div class= "main_info"  data-message-id = '+message.id+'>'+
@@ -65,4 +65,5 @@ $(function(){
   };
   var timer;
   timer = setInterval(reloadMessages, 5000);
+  e.stopPropagation();
 });
