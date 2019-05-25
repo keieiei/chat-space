@@ -131,10 +131,6 @@ p{
       display: flex;
 
     }
-    //   &_input_form{
-    //     height: 50px;
-    //     position: relative;
-    //     width: 100%;
         .field_with_errors{
 height: 50px;
 width: 100%;
@@ -155,7 +151,8 @@ width: 100%;
           cursor: pointer;
           width: 20px;
           position: relative;
-              right: 20px;
+              right: 25px;
+              top: 13px;
           .fa{
             color: black;
             display: inline-block;
